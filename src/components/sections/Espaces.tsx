@@ -44,6 +44,7 @@ function MarqueeCard({
         fill
         className="object-cover"
         sizes="(max-width: 640px) 260px, 320px"
+        quality={70}
         draggable={false}
       />
     </figure>

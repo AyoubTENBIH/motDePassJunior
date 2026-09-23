@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DecorativeLetters } from "@/components/ui/DecorativeLetters";
+import { LazyVideo } from "@/components/media/LazyVideo";
 import { contact, heroHighlights, videos } from "@/lib/content";
 
 export function Hero() {
@@ -37,6 +38,7 @@ export function Hero() {
                 width={1024}
                 height={342}
                 priority
+                sizes="(max-width: 640px) 90vw, 512px"
                 className="h-auto w-full object-contain"
               />
             </motion.div>
@@ -144,17 +146,13 @@ export function Hero() {
               className="absolute -bottom-1 -left-1 h-9 w-9 rounded-full bg-green/25"
             />
 
-            <div className="relative w-full overflow-hidden rounded-[28px] shadow-[0_24px_50px_-24px_rgba(30,58,110,0.4)] md:rounded-[32px]">
-              <video
+            <div className="relative w-full overflow-hidden rounded-[28px] bg-[#f0ebe3] shadow-[0_24px_50px_-24px_rgba(30,58,110,0.4)] md:rounded-[32px]">
+              <LazyVideo
+                src={videos.hero}
+                poster={videos.heroPoster}
+                eager
                 className="h-[80vh] w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              >
-                <source src={videos.hero} type="video/mp4" />
-              </video>
+              />
             </div>
           </motion.div>
         </div>

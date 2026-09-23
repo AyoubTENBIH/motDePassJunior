@@ -10,7 +10,7 @@ const niveaux = ["Préscolaire", "Primaire", "Je ne sais pas encore"] as const;
 const fieldClass =
   "h-14 w-full rounded-full border-0 bg-[#F4F1EA] px-6 text-sm text-navy placeholder:text-ink/35 outline-none transition focus:ring-2 focus:ring-orange/45";
 
-export function Contact() {
+export function Contact({ hideHeading = false }: { hideHeading?: boolean }) {
   const [parentName, setParentName] = useState("");
   const [phone, setPhone] = useState("");
   const [niveau, setNiveau] = useState("");
@@ -39,12 +39,14 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <h2 className="font-display text-4xl font-bold leading-tight text-navy md:text-5xl lg:text-[3.4rem]">
-              Entrons en
-              <br />
-              contact.
-            </h2>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-ink/65">
+            {hideHeading ? null : (
+              <h2 className="font-display text-4xl font-bold leading-tight text-navy md:text-5xl lg:text-[3.4rem]">
+                Entrons en
+                <br />
+                contact.
+              </h2>
+            )}
+            <p className={`${hideHeading ? "mt-0" : "mt-4"} max-w-md text-base leading-relaxed text-ink/65`}>
               Une question, une visite, une pré-inscription ? Écrivez-nous, on
               vous répond sur WhatsApp.
             </p>
@@ -77,9 +79,12 @@ export function Contact() {
               <div>
                 <dt className="font-semibold text-navy">Adresse</dt>
                 <dd className="mt-1 text-ink/65">
-                  {contact.address}
+                  {contact.streetAddress}
                   <br />
-                  Maternelle &amp; Primaire
+                  {contact.neighborhood}, {contact.addressLocality}{" "}
+                  {contact.postalCode}
+                  <br />
+                  Plus code {contact.plusCode}
                 </dd>
               </div>
               <div>
@@ -90,14 +95,14 @@ export function Contact() {
 
             <div className="mt-10 overflow-hidden rounded-[28px] bg-[#F4F1EA] ring-1 ring-navy/5">
               <iframe
-                title="Carte — Mot de Passe Junior, Mohammedia, La Coline"
-                src="https://maps.google.com/maps?q=Mot%20de%20Passe%20Junior%20Mohammedia%20La%20Coline&z=15&output=embed"
+                title="Carte — Mot de Passe Junior, Boulevard de la Résistance, Mohammedia"
+                src={contact.mapsEmbed}
                 className="h-64 w-full border-0 md:h-72"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Mot%20de%20Passe%20Junior%20Mohammedia%20La%20Coline"
+                href={contact.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-5 py-3 text-sm font-semibold text-navy transition-colors hover:text-orange"

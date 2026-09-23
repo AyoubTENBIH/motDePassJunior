@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { LazyVideo } from "@/components/media/LazyVideo";
 import { Reveal } from "@/components/ui/Reveal";
 import { vieEcoleColumns, videos } from "@/lib/content";
 
@@ -17,7 +18,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function VieEcole() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const videosRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -25,22 +25,26 @@ export function VieEcole() {
       if (!grid) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      const columns = gsap.utils.toArray<HTMLElement>(
-        grid.querySelectorAll(".vie-column"),
-      );
+      const isPhone = window.matchMedia("(max-width: 640px)").matches;
 
-      columns.forEach((column, pos) => {
-        gsap.to(column, {
-          ease: "none",
-          yPercent: -1 * pos * 10,
-          scrollTrigger: {
-            trigger: grid,
-            start: "clamp(top bottom)",
-            end: "clamp(bottom top)",
-            scrub: true,
-          },
+      if (!isPhone) {
+        const columns = gsap.utils.toArray<HTMLElement>(
+          grid.querySelectorAll(".vie-column"),
+        );
+
+        columns.forEach((column, pos) => {
+          gsap.to(column, {
+            ease: "none",
+            yPercent: -1 * pos * 10,
+            scrollTrigger: {
+              trigger: grid,
+              start: "clamp(top bottom)",
+              end: "clamp(bottom top)",
+              scrub: true,
+            },
+          });
         });
-      });
+      }
 
       const wraps = gsap.utils.toArray<HTMLElement>(
         grid.querySelectorAll(".vie-column__item"),
@@ -74,35 +78,6 @@ export function VieEcole() {
     return () => window.clearTimeout(t);
   }, []);
 
-  // Relance l'autoplay dès que les vidéos entrent dans le viewport
-  useEffect(() => {
-    const root = videosRef.current;
-    if (!root) return;
-    const nodes = [...root.querySelectorAll("video")];
-
-    const playVisible = () => {
-      nodes.forEach((video) => {
-        if (video.paused) void video.play().catch(() => {});
-      });
-    };
-
-    playVisible();
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting) void video.play().catch(() => {});
-          else video.pause();
-        });
-      },
-      { threshold: 0.25 },
-    );
-
-    nodes.forEach((video) => io.observe(video));
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section
       id="vie"
@@ -123,26 +98,18 @@ export function VieEcole() {
         </Reveal>
 
         {/* Vidéos événements — portrait, autoplay, sans contrôles */}
-        <div
-          ref={videosRef}
-          className="mx-auto mt-8 grid max-w-[720px] grid-cols-3 gap-[2vw] md:mt-10"
-        >
-          {videos.vie.map((src) => (
+        <div className="mx-auto mt-8 grid max-w-[720px] grid-cols-3 gap-[2vw] md:mt-10">
+          {videos.vie.map((item) => (
             <div
-              key={src}
+              key={item.src}
               className="vie-video overflow-hidden rounded-[14px] bg-[#f0ebe3]"
             >
-              <video
+              <LazyVideo
+                src={item.src}
+                poster={item.poster}
                 className="h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
                 aria-hidden
-              >
-                <source src={src} type="video/mp4" />
-              </video>
+              />
             </div>
           ))}
         </div>
@@ -164,7 +131,8 @@ export function VieEcole() {
                       alt=""
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 33vw, 360px"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 360px"
+                      quality={70}
                     />
                   </div>
                 </div>

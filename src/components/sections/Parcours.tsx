@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/ui/Reveal";
 import { parcours } from "@/lib/content";
@@ -111,33 +112,35 @@ export function Parcours() {
 
           {parcours.map((item, index) => (
             <Reveal key={item.id} delay={0.1 + index * 0.08} className="h-full">
-              <motion.article
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                className="group relative aspect-[3/4] max-h-[min(52vh,400px)] w-full overflow-hidden rounded-[24px] shadow-md ring-1 ring-navy/5"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 280px"
-                />
+              <Link href={item.href} className="block h-full">
+                <motion.article
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                  className="group relative aspect-[3/4] max-h-[min(52vh,400px)] w-full overflow-hidden rounded-[24px] shadow-md ring-1 ring-navy/5"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, 280px"
+                  />
 
-                <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
 
-                <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70">
-                    {index === 0 ? "01" : "02"}
-                  </p>
-                  <h3 className="mt-0.5 font-display text-xl font-bold text-white md:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 line-clamp-3 text-xs leading-snug text-white/85 md:text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.article>
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70">
+                      {index === 0 ? "01" : "02"}
+                    </p>
+                    <h3 className="mt-0.5 font-display text-xl font-bold text-white md:text-2xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 line-clamp-3 text-xs leading-snug text-white/85 md:text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.article>
+              </Link>
             </Reveal>
           ))}
 

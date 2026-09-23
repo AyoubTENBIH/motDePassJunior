@@ -41,9 +41,17 @@ export function Footer() {
                   Adresse
                 </dt>
                 <dd className="mt-1.5 text-cream/85">
-                  {contact.address}
-                  <br />
-                  Maternelle &amp; Primaire
+                  <a
+                    href={contact.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-orange"
+                  >
+                    {contact.streetAddress}
+                    <br />
+                    {contact.neighborhood}, {contact.addressLocality}{" "}
+                    {contact.postalCode}
+                  </a>
                 </dd>
               </div>
               <div>
@@ -79,7 +87,7 @@ export function Footer() {
                   Horaires
                 </dt>
                 <dd className="mt-1.5 text-cream/85">
-                  Lun–Ven, 8h – 17h
+                  {contact.hours}
                 </dd>
               </div>
             </dl>

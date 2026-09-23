@@ -15,6 +15,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Mot de Passe Junior est une école maternelle et primaire à Mohammedia. Parcours préscolaire et primaire, approche trilingue, inscriptions 2026-2027 ouvertes.",
   path: "/",
+  absoluteTitle: true,
 });
 
 export default function Home() {

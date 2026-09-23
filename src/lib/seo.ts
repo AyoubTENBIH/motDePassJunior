@@ -13,14 +13,16 @@ export function pageMetadata({
   title,
   description,
   path,
+  absoluteTitle = false,
 }: {
   title: string;
   description: string;
   path: string;
+  absoluteTitle?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -47,12 +49,19 @@ export function schoolJsonLd() {
     telephone: "+212664617070",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Mohammedia",
+      streetAddress: contact.streetAddress,
+      addressLocality: contact.addressLocality,
+      postalCode: contact.postalCode,
       addressRegion: "Casablanca-Settat",
       addressCountry: "MA",
-      streetAddress: contact.address,
     },
-    areaServed: ["Mohammedia", "La Coline"],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: contact.geo.latitude,
+      longitude: contact.geo.longitude,
+    },
+    hasMap: contact.mapsUrl,
+    areaServed: [contact.addressLocality, contact.neighborhood],
   };
 }
 

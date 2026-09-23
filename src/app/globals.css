@@ -238,6 +238,18 @@ h3,
     --vie-gap: 10px;
     --vie-radius: 12px;
     --vie-translate: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: stretch;
+    padding-inline: 1.25rem;
+  }
+
+  .vie-column {
+    display: contents;
+  }
+
+  .vie-column__item,
+  .vie-column__imgwrap {
+    width: 100%;
   }
 }
 

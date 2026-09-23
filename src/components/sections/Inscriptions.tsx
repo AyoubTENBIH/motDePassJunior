@@ -24,7 +24,7 @@ export function Inscriptions() {
                 width={578}
                 height={614}
                 className="h-auto w-full select-none"
-                unoptimized
+                sizes="116px"
               />
             </div>
 
@@ -104,7 +104,7 @@ export function Inscriptions() {
                       width={120}
                       height={118}
                       className="pointer-events-none absolute left-6 top-full mt-3 w-[3.75rem] md:left-8 md:w-[4.5rem]"
-                      unoptimized
+                      sizes="72px"
                       aria-hidden
                     />
                   </div>
@@ -120,8 +120,7 @@ export function Inscriptions() {
                   width={280}
                   height={428}
                   className="h-auto w-[68%] max-w-[250px] object-contain object-bottom drop-shadow-[0_18px_40px_rgba(19,38,70,0.22)]"
-                  unoptimized
-                  priority
+                  sizes="250px"
                 />
               </div>
             </div>
@@ -137,8 +136,6 @@ export function Inscriptions() {
                 fill
                 className="object-contain object-bottom object-right drop-shadow-[0_20px_44px_rgba(19,38,70,0.28)]"
                 sizes="460px"
-                unoptimized
-                priority
               />
             </div>
           </div>

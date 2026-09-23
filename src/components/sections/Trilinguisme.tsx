@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/ui/Reveal";
 import { trilangues } from "@/lib/content";
@@ -165,6 +166,14 @@ export function Trilinguisme() {
             </span>
             {after}
           </h2>
+          <p className="mt-4">
+            <Link
+              href="/trilingue"
+              className="text-sm font-semibold text-navy underline decoration-orange/50 hover:text-orange"
+            >
+              Découvrir l&apos;approche trilingue →
+            </Link>
+          </p>
         </Reveal>
 
         <div className="mt-12 grid items-start gap-12 md:mt-16 md:grid-cols-3 md:gap-8 lg:gap-12">
@@ -186,7 +195,7 @@ export function Trilinguisme() {
             delay={0.08}
             className="flex flex-col items-center text-center"
           >
-            <div className="relative mb-1 flex h-[180px] w-full max-w-[280px] items-end justify-center sm:h-[200px] sm:max-w-[300px]">
+            <div className="relative mb-1 flex h-[250px] w-full max-w-[280px] items-end justify-center sm:h-[200px] sm:max-w-[300px]">
               <div className="absolute bottom-10 left-0 z-[1] aspect-[3/4] w-[52%] -rotate-[10deg] overflow-hidden rounded-2xl shadow-[0_12px_28px_-12px_rgba(30,58,110,0.35)]">
                 <Image
                   src={center.images[0]}
@@ -194,6 +203,7 @@ export function Trilinguisme() {
                   fill
                   className="object-cover"
                   sizes="160px"
+                  quality={70}
                 />
               </div>
               <div className="absolute bottom-10 right-0 z-[2] aspect-[3/4] w-[52%] rotate-[10deg] overflow-hidden rounded-2xl shadow-[0_12px_28px_-12px_rgba(30,58,110,0.35)]">
@@ -203,6 +213,7 @@ export function Trilinguisme() {
                   fill
                   className="object-cover"
                   sizes="160px"
+                  quality={70}
                 />
               </div>
               <div className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2">

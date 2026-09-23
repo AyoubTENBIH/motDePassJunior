@@ -11,8 +11,20 @@ export const contact = {
   phoneDisplay: "06 64 61 70 70",
   phoneHref: "tel:+212664617070",
   whatsappNumber: "212664617070",
-  address: "Mohammedia, La Coline",
+  streetAddress: "Boulevard de la Résistance",
+  addressLocality: "Mohammedia",
+  postalCode: "28000",
+  neighborhood: "La Coline",
+  plusCode: "MJXH+7P2",
+  address: "Boulevard de la Résistance, Mohammedia 28000",
   hours: "Lun–Ven, 8h – 17h",
+  mapsUrl: "https://maps.app.goo.gl/BNKsY1YH5EHC3xZA9",
+  mapsEmbed:
+    "https://maps.google.com/maps?q=33.698126,-7.370735&z=16&output=embed",
+  geo: {
+    latitude: 33.698126,
+    longitude: -7.370735,
+  },
   whatsapp:
     "https://wa.me/212664617070?text=" +
     encodeURIComponent(
@@ -68,6 +80,7 @@ export const heroHighlights = [
 export const parcours = [
   {
     id: "prescolaire",
+    href: "/prescolaire",
     title: "Préscolaire",
     description:
       "Des couleurs, des jeux, des espaces pour apprendre, créer et s'amuser — les premiers pas de l'aventure.",
@@ -76,6 +89,7 @@ export const parcours = [
   },
   {
     id: "primaire",
+    href: "/primaire",
     title: "Primaire",
     description:
       "De nouvelles classes, de nouvelles découvertes, et toujours plus de choses à apprendre.",
@@ -192,9 +206,19 @@ export const vieEcoleMedia = [
 
 export const videos = {
   hero: "/media/videos/video_presentative.mp4",
+  heroPoster: "/media/videos/video_presentative.jpg",
   vie: [
-    "/media/videos/video2.mp4",
-    "/media/videos/video3.mp4",
-    "/media/videos/video4.mp4",
+    {
+      src: "/media/videos/video2.mp4",
+      poster: "/media/videos/video2.jpg",
+    },
+    {
+      src: "/media/videos/video3.mp4",
+      poster: "/media/videos/video3.jpg",
+    },
+    {
+      src: "/media/videos/video4.mp4",
+      poster: "/media/videos/video4.jpg",
+    },
   ],
 } as const;

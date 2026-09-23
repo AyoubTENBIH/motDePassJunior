@@ -35,6 +35,7 @@ export function Header() {
           width={220}
           height={74}
           priority
+          sizes="220px"
           className="h-11 w-auto object-contain transition-opacity group-hover:opacity-90 md:h-12"
         />
       </a>
