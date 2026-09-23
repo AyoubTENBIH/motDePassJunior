@@ -248,3 +248,12 @@ h3,
     --vie-translate: 18px;
   }
 }
+
+/* Footer — titre géant sur une seule ligne */
+.footer-brand-title {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+  font-size: clamp(1.55rem, 8.2vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}

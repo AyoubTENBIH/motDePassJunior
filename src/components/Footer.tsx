@@ -23,10 +23,9 @@ export function Footer() {
   return (
     <footer id="contact" className="scroll-mt-24 overflow-hidden bg-navy text-cream">
       <div className="mx-auto max-w-7xl px-5 pt-12 md:px-8 md:pt-16 lg:pt-20">
-        {/* Titre géant — même principe que la référence, police Fredoka */}
-        <h2 className="font-display w-full text-left text-[clamp(2.6rem,11.5vw,9.5rem)] font-bold leading-[0.88] tracking-[-0.03em] text-cream">
-          Mot de Passe{" "}
-          <span className="whitespace-nowrap text-orange">Junior</span>
+        {/* Titre géant — Fredoka, pleine largeur comme la référence */}
+        <h2 className="footer-brand-title w-full whitespace-nowrap text-center text-cream">
+          Mot de Passe <span className="text-orange">Junior</span>
         </h2>
 
         {/* 4 colonnes */}
