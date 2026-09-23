@@ -8,9 +8,25 @@ export function Inscriptions() {
   return (
     <section id="inscriptions" className="relative scroll-mt-24 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        {/* Espace haut pour que la tête dépasse le bandeau */}
-        <div className="pt-16 md:pt-20 lg:pt-24">
+        {/* Espace haut : cartoon + tête de la fille */}
+        <div className="pt-[5.5rem] md:pt-24 lg:pt-28">
           <div className="relative">
+            {/* Cartoon — pieds collés au bord haut gauche (ancre bottom:100%) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute left-[clamp(0.85rem,3.2%,1.75rem)] z-30 w-[clamp(4.75rem,13vw,7.25rem)]"
+              style={{ bottom: "100%", transform: "translateY(3.5%)" }}
+            >
+              <Image
+                src="/media/icons/inscription-cartoon.png"
+                alt=""
+                width={578}
+                height={614}
+                className="h-auto w-full select-none"
+                unoptimized
+              />
+            </div>
+
             {/* Bandeau coloré (coins arrondis) */}
             <div className="inscription-banner relative overflow-hidden rounded-[2rem] md:rounded-[2.75rem]">
               <svg
