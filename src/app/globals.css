@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #1e3a6e;
+  --navy-dark: #132646;
+  --orange: #f5a623;
+  --orange-dark: #e28e0c;
+  --green: #5fae3e;
+  --coral: #e4483c;
+  --cream: #fffbf3;
+  --ink: #1b2432;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-navy-dark: var(--navy-dark);
+  --color-orange: var(--orange);
+  --color-orange-dark: var(--orange-dark);
+  --color-green: var(--green);
+  --color-coral: var(--coral);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-display: var(--font-fredoka);
+  --font-sans: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--orange) 35%, transparent);
+  color: var(--navy-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Espaces marquee — même logique que le portfolio (2 rails + GradualBlur) */
+.espaces-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.gradual-blur {
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  isolation: isolate;
+}
+
+.gradual-blur-parent {
+  overflow: hidden;
+}
+
+.gradual-blur-inner {
+  pointer-events: none;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .gradual-blur-inner > div {
+    background: rgba(255, 251, 243, 0.55);
+    opacity: 0.55;
+  }
+}
+
+.espaces-marquee__rows {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.espaces-marquee__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.espaces-marquee__rail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  align-items: stretch;
+  gap: 20px;
+  will-change: transform;
+}
+
+.espaces-marquee__rail-slot {
+  flex-shrink: 0;
+}
+
+.espaces-marquee__card {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #f0ebe3;
+}
+
+.espaces-marquee__card--tall {
+  width: min(280px, 72vw);
+  height: min(360px, 48vw);
+}
+
+.espaces-marquee__card--wide {
+  width: min(340px, 78vw);
+  height: min(260px, 42vw);
+}
+
+@media (min-width: 768px) {
+  .espaces-marquee__card--tall {
+    width: 300px;
+    height: 380px;
+  }
+
+  .espaces-marquee__card--wide {
+    width: 380px;
+    height: 280px;
+  }
+}
+
+.espaces-marquee__static {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 1.25rem;
+}
+
+.espaces-marquee__static-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+/* Inscriptions — banner FunCare (structure) */
+.inscription-banner {
+  min-height: 420px;
+  border-radius: 36px;
+}
+
+@media (min-width: 768px) {
+  .inscription-banner {
+    min-height: 480px;
+    border-radius: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inscription-banner {
+    min-height: 520px;
+  }
+}
+.vie-video {
+  aspect-ratio: 0.75;
+  position: relative;
+}
+
+.vie-video video {
+  position: absolute;
+  inset: 0;
+}
+
+/* Vie à l'école — Codrops OnScrollColumnsRows Demo 1 */
+.vie-columns {
+  --vie-gap: 2vw;
+  --vie-ratio: 0.75;
+  --vie-radius: 14px;
+  --vie-translate: 30px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--vie-gap);
+  place-items: start center;
+  padding: 8vh 0 16vh;
+}
+
+.vie-column {
+  width: 100%;
+  display: grid;
+  gap: var(--vie-gap);
+  will-change: transform;
+}
+
+.vie-column__item {
+  margin: 0;
+  position: relative;
+}
+
+.vie-column__imgwrap {
+  width: 100%;
+  aspect-ratio: var(--vie-ratio);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--vie-radius);
+  background: #f0ebe3;
+}
+
+.vie-column__img {
+  position: absolute;
+  top: calc(-1 * var(--vie-translate));
+  left: calc(-1 * var(--vie-translate));
+  height: calc(100% + var(--vie-translate) * 2);
+  width: calc(100% + var(--vie-translate) * 2);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .vie-columns {
+    --vie-gap: 10px;
+    --vie-radius: 12px;
+    --vie-translate: 18px;
+  }
 }
