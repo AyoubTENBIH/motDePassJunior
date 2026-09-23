@@ -170,20 +170,12 @@ h3,
 
 /* Inscriptions — banner FunCare (structure) */
 .inscription-banner {
-  min-height: 420px;
   border-radius: 36px;
 }
 
 @media (min-width: 768px) {
   .inscription-banner {
-    min-height: 480px;
     border-radius: 44px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .inscription-banner {
-    min-height: 520px;
   }
 }
 .vie-video {

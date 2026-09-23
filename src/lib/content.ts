@@ -1,21 +1,28 @@
 export const navLinks = [
-  { href: "#parcours", label: "Parcours" },
-  { href: "#valeurs", label: "Valeurs" },
-  { href: "#espaces", label: "Espaces" },
-  { href: "#vie", label: "Vie à l'école" },
-  { href: "#contact", label: "Contact" },
+  { href: "/maternelle", label: "Maternelle" },
+  { href: "/primaire", label: "Primaire" },
+  { href: "/trilingue", label: "Trilingue" },
+  { href: "/#vie", label: "Vie à l'école" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 /** WhatsApp — 0664617070 (Maroc) */
 export const contact = {
   phoneDisplay: "06 64 61 70 70",
   phoneHref: "tel:+212664617070",
+  whatsappNumber: "212664617070",
+  address: "Mohammedia, La Coline",
+  hours: "Lun–Ven, 8h – 17h",
   whatsapp:
     "https://wa.me/212664617070?text=" +
     encodeURIComponent(
       "Bonjour, je souhaite des informations sur les inscriptions Mot de Passe Junior.",
     ),
 } as const;
+
+export function whatsappUrl(text: string) {
+  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
 
 export const valeurs = [
   {

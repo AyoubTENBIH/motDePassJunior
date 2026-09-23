@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "link";
+type Variant = "primary" | "secondary" | "ghost" | "link" | "banner" | "bannerGhost";
 
 type ButtonProps = {
   href: string;
@@ -17,6 +17,10 @@ const styles: Record<Variant, string> = {
   ghost:
     "bg-transparent text-navy border border-navy/20 hover:border-navy/40 hover:bg-navy/5",
   link: "bg-transparent text-navy px-0 border-0 hover:text-orange-dark hover:translate-y-0",
+  banner:
+    "bg-orange text-navy hover:bg-cream hover:text-coral",
+  bannerGhost:
+    "bg-transparent text-cream border-[2.5px] border-cream/80 hover:border-cream hover:bg-cream/15",
 };
 
 function isExternal(href: string) {

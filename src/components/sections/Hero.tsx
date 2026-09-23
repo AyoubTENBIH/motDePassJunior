@@ -47,22 +47,30 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.08 }}
               className="mt-2 font-display text-[1.45rem] font-bold leading-[1.2] text-navy sm:text-2xl md:mt-3 md:text-[1.85rem] lg:text-[2.15rem]"
             >
-              <span className="block font-semibold leading-snug">
-                On a tous une famille à la maison.
-              </span>
-              <span className="mt-2 block font-semibold text-coral underline decoration-orange decoration-[3px] underline-offset-[10px]">
-                Ici, on en découvre une deuxième.
-              </span>
+              École maternelle et primaire à Mohammedia
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.14 }}
-              className="mt-5 max-w-2xl text-base leading-relaxed text-ink/65 md:text-lg"
+              transition={{ duration: 0.55, delay: 0.12 }}
+              className="mt-3 max-w-2xl text-base leading-relaxed text-ink/65 md:text-lg"
             >
-              Maternelle & Primaire. Un lieu pour apprendre, découvrir, grandir
-              et réussir, en trois langues.
+              Mot de Passe Junior accueille les enfants en préscolaire,
+              maternelle et primaire à Mohammedia, au quartier La Coline, dans
+              un environnement bienveillant, stimulant et trilingue.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.16 }}
+              className="mt-4 font-display text-[1.25rem] font-semibold leading-snug text-navy md:text-[1.5rem]"
+            >
+              <span className="block">On a tous une famille à la maison.</span>
+              <span className="mt-1 block text-coral underline decoration-orange decoration-[3px] underline-offset-[10px]">
+                Ici, on en découvre une deuxième.
+              </span>
             </motion.p>
 
             <motion.div

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fredoka, Poppins } from "next/font/google";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { pageMetadata, schoolJsonLd, siteName } from "@/lib/seo";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -18,15 +20,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Mot de Passe Junior | École Maternelle & Primaire — Casablanca",
-  description:
-    "Mot de Passe Junior — Maternelle & Primaire à Casablanca. Un lieu pour apprendre, découvrir, grandir et réussir, en trois langues. Inscriptions 2026-2027 ouvertes.",
-  openGraph: {
-    title: "Mot de Passe Junior",
+  metadataBase: new URL("https://www.motdepassejunior.ma"),
+  ...pageMetadata({
+    title: "École maternelle et primaire à Mohammedia | Mot de Passe Junior",
     description:
-      "École privée maternelle & primaire à Casablanca. Trilinguisme, parcours préscolaire et primaire.",
-    locale: "fr_MA",
-    type: "website",
+      "Mot de Passe Junior est une école maternelle et primaire à Mohammedia, quartier La Coline. Parcours préscolaire et primaire, approche trilingue, inscriptions 2026-2027 ouvertes.",
+    path: "/",
+  }),
+  title: {
+    default: "École maternelle et primaire à Mohammedia | Mot de Passe Junior",
+    template: `%s | ${siteName}`,
   },
 };
 
@@ -37,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fredoka.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <JsonLd data={schoolJsonLd()} />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

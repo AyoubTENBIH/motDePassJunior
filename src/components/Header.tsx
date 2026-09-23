@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { GlassSurface } from "@/components/ui/GlassSurface";
 import { contact, navLinks } from "@/lib/content";
 
@@ -27,7 +28,7 @@ export function Header() {
 
   const inner = (
     <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-2.5 md:px-8">
-      <a href="#accueil" className="group relative z-10 shrink-0">
+      <a href="/" className="group relative z-10 shrink-0">
         <Image
           src="/media/logo-brand-v3.png"
           alt="Mot de Passe Junior"
@@ -51,9 +52,11 @@ export function Header() {
       </nav>
 
       <div className="hidden lg:block">
-        <Button href={contact.whatsapp} className="!h-10 !px-5 !text-xs md:!text-sm">
-          Inscriptions 2026-2027
-        </Button>
+        <MagneticButton>
+          <Button href={contact.whatsapp} className="!h-10 !px-5 !text-xs md:!text-sm">
+            Inscriptions 2026-2027
+          </Button>
+        </MagneticButton>
       </div>
 
       <button
@@ -125,13 +128,15 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <Button
-                href={contact.whatsapp}
-                onClick={() => setOpen(false)}
-                className="mt-2 w-full"
-              >
-                Inscriptions 2026-2027
-              </Button>
+              <MagneticButton className="mt-2 w-full">
+                <Button
+                  href={contact.whatsapp}
+                  onClick={() => setOpen(false)}
+                  className="w-full"
+                >
+                  Inscriptions 2026-2027
+                </Button>
+              </MagneticButton>
             </nav>
           </motion.div>
         )}

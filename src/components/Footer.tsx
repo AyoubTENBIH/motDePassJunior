@@ -7,10 +7,10 @@ const socialLinks = [
 ] as const;
 
 const resourceLinks = [
-  { label: "Inscriptions 2026-2027", href: contact.whatsapp },
-  { label: "Parcours", href: "#parcours" },
-  { label: "Vie à l'école", href: "#vie" },
-  { label: "Questions fréquentes", href: "#contact" },
+  { label: "Inscriptions 2026-2027", href: "/inscriptions" },
+  { label: "Maternelle", href: "/maternelle" },
+  { label: "Guide des parents", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 const legalLinks = [
@@ -21,7 +21,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 overflow-hidden bg-navy text-cream">
+    <footer className="overflow-hidden bg-navy text-cream">
       <div className="mx-auto max-w-7xl px-5 pt-12 md:px-8 md:pt-16 lg:pt-20">
         {/* Titre géant — Fredoka, pleine largeur comme la référence */}
         <h2 className="footer-brand-title w-full whitespace-nowrap text-center text-cream">
@@ -41,7 +41,7 @@ export function Footer() {
                   Adresse
                 </dt>
                 <dd className="mt-1.5 text-cream/85">
-                  Casablanca, Maroc
+                  {contact.address}
                   <br />
                   Maternelle &amp; Primaire
                 </dd>

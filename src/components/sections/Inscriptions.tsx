@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { contact } from "@/lib/content";
 
 export function Inscriptions() {
@@ -35,14 +36,14 @@ export function Inscriptions() {
                 preserveAspectRatio="none"
                 aria-hidden
               >
-                <rect width="1200" height="480" fill="#ff452b" />
+                <rect width="1200" height="480" fill="var(--coral)" />
                 <path
                   d="M660 0
                      C 560 90, 700 160, 660 240
                      C 620 320, 760 360, 720 440
                      C 705 465, 750 475, 745 480
                      L 1200 480 L 1200 0 Z"
-                  fill="#7dded3"
+                  fill="color-mix(in srgb, var(--green) 52%, white)"
                 />
                 <path
                   d="M800 30
@@ -55,8 +56,8 @@ export function Inscriptions() {
                 />
               </svg>
 
-              <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.05fr_0.95fr] md:min-h-[420px] lg:min-h-[460px]">
-                <div className="flex flex-col justify-center px-8 py-14 md:px-12 md:py-16 lg:px-16 lg:py-[4.5rem]">
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.05fr_0.95fr] md:min-h-[340px] lg:min-h-[360px]">
+                <div className="flex flex-col justify-center px-8 pb-16 pt-10 md:px-12 md:pb-[4.25rem] md:pt-12 lg:px-16 lg:pt-14">
                   <h2 className="font-display text-[2.15rem] font-bold leading-[1.08] tracking-tight text-white md:text-[2.7rem] lg:text-[3.1rem]">
                     Donnez-leur
                     <br />
@@ -71,7 +72,7 @@ export function Inscriptions() {
                   >
                     <path
                       d="M1 7 C 12 2, 20 10, 32 6 C 44 2, 52 10, 64 5 C 76 2, 86 9, 103 6"
-                      stroke="#2f9e44"
+                      stroke="var(--green)"
                       strokeWidth="3"
                       strokeLinecap="round"
                     />
@@ -86,34 +87,27 @@ export function Inscriptions() {
                     un accompagnement personnalisé.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-3 md:mt-9">
-                    <Link
-                      href={contact.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-12 items-center justify-center rounded-full px-7 text-[0.9rem] font-bold transition hover:brightness-105"
-                      style={{ backgroundColor: "#ffe600", color: "#ff452b" }}
-                    >
-                      Je pré-inscris mon enfant
-                    </Link>
-                    <Link
-                      href="#parcours"
-                      className="inline-flex h-12 items-center justify-center rounded-full px-6 text-[0.9rem] font-semibold text-white transition hover:bg-white/10"
-                      style={{ border: "2.5px solid #ff8a6b" }}
-                    >
-                      Découvrir les parcours
-                    </Link>
+                  <div className="relative mt-8 flex flex-wrap items-center gap-3 md:mt-9">
+                    <MagneticButton>
+                      <Button href={contact.whatsapp} variant="banner">
+                        Je pré-inscris mon enfant
+                      </Button>
+                    </MagneticButton>
+                    <MagneticButton>
+                      <Button href="#parcours" variant="bannerGhost">
+                        Découvrir les parcours
+                      </Button>
+                    </MagneticButton>
+                    <Image
+                      src="/media/icons/inscription-arrow.png"
+                      alt=""
+                      width={120}
+                      height={118}
+                      className="pointer-events-none absolute left-6 top-full mt-3 w-[3.75rem] md:left-8 md:w-[4.5rem]"
+                      unoptimized
+                      aria-hidden
+                    />
                   </div>
-
-                  <Image
-                    src="/media/icons/inscription-arrow.png"
-                    alt=""
-                    width={120}
-                    height={118}
-                    className="mt-6 w-[4.25rem] md:mt-7 md:w-[5.25rem]"
-                    unoptimized
-                    aria-hidden
-                  />
                 </div>
 
                 <div className="hidden md:block" aria-hidden />
