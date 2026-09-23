@@ -73,13 +73,22 @@ export function Espaces() {
   const rail1Ref = useRef<HTMLDivElement | null>(null);
   const rail2Ref = useRef<HTMLDivElement | null>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [isPhone, setIsPhone] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(mq.matches);
+    const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const phoneMq = window.matchMedia("(max-width: 639px)");
+    const sync = () => {
+      setReduceMotion(motionMq.matches);
+      setIsPhone(phoneMq.matches);
+    };
     sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
+    motionMq.addEventListener("change", sync);
+    phoneMq.addEventListener("change", sync);
+    return () => {
+      motionMq.removeEventListener("change", sync);
+      phoneMq.removeEventListener("change", sync);
+    };
   }, []);
 
   useLayoutEffect(() => {
@@ -238,23 +247,23 @@ export function Espaces() {
         <GradualBlur
           target="parent"
           position="left"
-          height="clamp(4rem, 12vw, 7rem)"
-          strength={2}
-          divCount={5}
+          height={isPhone ? "2.1rem" : "clamp(4rem, 12vw, 7rem)"}
+          strength={isPhone ? 0.85 : 2}
+          divCount={isPhone ? 3 : 5}
           curve="bezier"
           exponential
-          opacity={1}
+          opacity={isPhone ? 0.7 : 1}
           zIndex={7}
         />
         <GradualBlur
           target="parent"
           position="right"
-          height="clamp(4rem, 12vw, 7rem)"
-          strength={2}
-          divCount={5}
+          height={isPhone ? "2.1rem" : "clamp(4rem, 12vw, 7rem)"}
+          strength={isPhone ? 0.85 : 2}
+          divCount={isPhone ? 3 : 5}
           curve="bezier"
           exponential
-          opacity={1}
+          opacity={isPhone ? 0.7 : 1}
           zIndex={7}
         />
 

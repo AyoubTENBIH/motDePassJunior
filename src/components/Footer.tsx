@@ -1,4 +1,8 @@
-import { contact, navLinks } from "@/lib/content";
+import { TextLoop } from "@/components/effects/TextLoop";
+import { contact, mapsSearchUrl, navLinks } from "@/lib/content";
+
+const footerLoopText =
+  "Mot de Passe Junior \u2003✦\u2003 Apprendre \u2003✦\u2003 Découvrir \u2003✦\u2003 Grandir \u2003✦\u2003 Réussir";
 
 const socialLinks = [
   { label: "Facebook", href: "#" },
@@ -23,13 +27,35 @@ export function Footer() {
   return (
     <footer className="overflow-hidden bg-navy text-cream">
       <div className="mx-auto max-w-7xl px-5 pt-12 md:px-8 md:pt-16 lg:pt-20">
-        {/* Titre géant — Fredoka, pleine largeur comme la référence */}
         <h2 className="footer-brand-title w-full whitespace-nowrap text-center text-cream">
           Mot de Passe <span className="text-orange">Junior</span>
         </h2>
+      </div>
 
+      <div className="mt-5 w-full md:mt-6">
+        <TextLoop
+          text={footerLoopText}
+          shape="wave"
+          speed={90}
+          direction="forward"
+          separator="✦"
+          separatorImage="/media/icons/logo-loop.png"
+          curviness={32}
+          fontSize={34}
+          fontWeight={800}
+          letterSpacing={3}
+          uppercase
+          color="#ffffff"
+          ribbon
+          ribbonColor="#f5a623"
+          ribbonWidth={68}
+          pauseOnHover={false}
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         {/* 4 colonnes */}
-        <div className="mt-12 grid gap-10 border-t border-cream/15 pt-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-8 lg:pt-12">
+        <div className="mt-10 grid gap-10 border-t border-cream/15 pt-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-8 lg:pt-12">
           {/* Contact */}
           <div>
             <p className="font-display text-lg font-bold text-cream md:text-xl">
@@ -42,7 +68,7 @@ export function Footer() {
                 </dt>
                 <dd className="mt-1.5 text-cream/85">
                   <a
-                    href={contact.mapsUrl}
+                    href={mapsSearchUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="transition-colors hover:text-orange"
@@ -87,7 +113,7 @@ export function Footer() {
                   Horaires
                 </dt>
                 <dd className="mt-1.5 text-cream/85">
-                  {contact.hours}
+                  {contact.hours ?? "Horaires à confirmer auprès de l'école"}
                 </dd>
               </div>
             </dl>

@@ -1,0 +1,47 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "a-quel-age-commencer-maternelle",
+  title: "À quel âge commencer la maternelle ?",
+  description:
+    "À quel âge commencer la maternelle : signes de maturité, différence avec le préscolaire, et comment décider sans se comparer aux autres parents.",
+  category: "Petite enfance & développement",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "prescolaire-ou-maternelle-maroc",
+    "preparer-enfant-premiere-rentree-scolaire",
+    "premiere-rentree-maternelle-transition",
+  ],
+  pillar: "/maternelle",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-accueil.webp",
+  body: [
+    p("« Il a déjà l'âge, non ? » Cette phrase circule vite entre parents. Elle mélange deux choses : l'âge civil, que l'école utilise pour organiser les groupes, et la maturité, qui n'arrive pas à la même date pour tout le monde. Commencer la maternelle, ce n'est pas cocher un anniversaire. C'est décider qu'un enfant peut, avec de l'accompagnement, passer une partie de sa journée dans un collectif."),
+    p("À Mohammedia, les écoles privées n'ont pas toutes le même seuil. Certaines ouvrent très tôt un accueil de type [préscolaire](/prescolaire). D'autres parlent de [maternelle](/maternelle) dès qu'il y a un groupe constitué. [DONNÉE ÉCOLE À CONFIRMER : âge minimum exact à Mot de Passe Junior]. En attendant cette donnée, cet article vous aide à regarder votre enfant, pas le voisin."),
+    h2("L'âge civil et l'âge « prêt »"),
+    p("L'âge civil sert à l'administration et à la constitution des classes. Il est utile. Il ne dit pas si votre enfant supportera la séparation, le bruit, l'attente, le fait de ne pas être le centre. Deux enfants nés le même mois peuvent vivre la rentrée de façon opposée. L'un court vers les vélos. L'autre a besoin que vous restiez encore dix minutes près de la porte."),
+    p("Ni l'un ni l'autre n'a « tort ». Le second n'est pas en retard. Il a besoin d'un pont. Une école attentive construit ce pont. Une école pressée le nie. C'est souvent cela, plus que l'âge affiché, qui fait la différence."),
+    h3("Des signes plus parlants qu'une date"),
+    ul(
+      "Il peut s'occuper un moment avec un jeu, même si vous êtes dans la pièce.",
+      "Il commence à accepter qu'un autre adulte l'aide (manteau, goûter, doudou).",
+      "Il montre de l'intérêt pour d'autres enfants, même en parallèle, sans encore partager.",
+      "Il a un minimum de langage — mots, gestes, regards — pour dire qu'il a besoin.",
+      "Il tolère, peu à peu, un changement de routine sans s'effondrer longtemps.",
+    ),
+    p("Aucun de ces signes n'est obligatoire à 100 %. Un enfant peut entrer en maternelle en portant encore une couche à la sieste, ou en parlant peu. Ce qui compte, c'est la tendance, et la capacité de l'école à s'ajuster. Si presque aucun de ces signes n'est là, un premier temps en préscolaire, plus souple, est souvent plus juste. Voir [Préscolaire ou maternelle : quelle différence au Maroc ?](/blog/prescolaire-ou-maternelle-maroc)."),
+    h2("Trop tôt, trop tard : deux peurs fréquentes"),
+    p("La peur du « trop tôt » est saine. Un enfant poussé dans un collectif trop exigeant peut devenir plus collant à la maison, plus fatigué, plus agressif. Ce n'est pas une raison de ne jamais y aller. C'est une raison de choisir un rythme et une durée adaptés, au moins au début."),
+    p("La peur du « trop tard » est plus sociale. On entend que les autres « savent déjà tenir un crayon », « parlent déjà anglais ». Ces comparaisons mélangent l'affichage et le développement. Un enfant qui a joué, écouté des histoires et été écouté arrive rarement « en retard » en maternelle. Il arrive avec autre chose que des fiches : une sécurité intérieure."),
+    h3("La propreté, le langage, la sieste"),
+    p("Trois sujets reviennent. La propreté : beaucoup d'écoles demandent que l'enfant soit propre le jour, tout en sachant que les accidents existent. Demandez la règle réelle, pas la règle idéale. [DONNÉE ÉCOLE À CONFIRMER : exigence de propreté à Mot de Passe Junior]. Le langage : un enfant discret n'est pas un enfant « pas prêt ». Un enfant qui ne communique d'aucune façon a besoin d'un regard plus attentif, à la maison et à l'école. La sieste : certains en ont encore besoin, d'autres plus. Une bonne école prévoit les deux, au lieu de forcer tout le monde à fermer les yeux."),
+    h2("Comment décider en famille"),
+    p("Parlez-en à deux, si vous êtes deux. L'un veut « socialiser ». L'autre veut « encore un an à la maison ». Ces deux élans peuvent être vrais. Posez alors des questions concrètes : qui fera les trajets ? L'enfant sera-t-il fatigué par une journée trop longue ? Existe-t-il un accueil plus court au début ? [DONNÉE ÉCOLE À CONFIRMER : horaires et possibilité de temps partiel]."),
+    p("Préparer le corps et les routines aide, quel que soit l'âge. Les articles [Comment préparer son enfant à sa première rentrée](/blog/preparer-enfant-premiere-rentree-scolaire) et [Première rentrée en maternelle](/blog/premiere-rentree-maternelle-transition) détaillent le « comment ». L'autonomie, elle, se construit avant et pendant : [développer l'autonomie avant l'école](/blog/developper-autonomie-enfant-avant-ecole)."),
+    h2("Ce que l'école peut vous dire — et ce qu'elle ne peut pas"),
+    p("Une équipe de [maternelle](/maternelle) à Mohammedia peut vous dire : « pour son âge, nos groupes sont ainsi », « on a l'habitude des séparations difficiles », « on vous conseille plutôt le préscolaire cette année ». Elle ne peut pas vous garantir que votre enfant sera ravi le 7 septembre. Personne ne le peut."),
+    p("Si vous hésitez, visitez. Regardez les enfants déjà là, pas seulement la salle d'attente. Puis écrivez ce que vous avez vu. Les [inscriptions](/inscriptions) peuvent attendre ce regard. Un message WhatsApp suffit souvent à poser la question de l'âge sans vous engager."),
+    p("Un dernier point, plus calme : l'année scolaire a un rythme. Commencer en septembre n'est pas la seule porte, mais c'est celle que beaucoup de familles de Mohammedia visent. Si vous arrivez plus tard, dites-le. Une école honnête vous dira si le groupe peut encore accueillir, ou s'il vaut mieux viser la rentrée suivante. Le calendrier national 2026-2027 est rappelé dans [cet article](/blog/calendrier-scolaire-2026-2027-maroc-mohammedia). Le reste se décide enfant par enfant."),
+  ],
+};

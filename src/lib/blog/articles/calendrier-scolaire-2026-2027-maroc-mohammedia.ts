@@ -1,0 +1,50 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "calendrier-scolaire-2026-2027-maroc-mohammedia",
+  title:
+    "Calendrier scolaire 2026-2027 au Maroc : dates clés pour les parents de Mohammedia",
+  description:
+    "Calendrier scolaire 2026-2027 au Maroc (arrêté n°047.26) : rentrée, vacances intercalaires et fêtes. Ce que cela change pour les familles de Mohammedia.",
+  category: "Rentrée & vie quotidienne",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "preparer-enfant-premiere-rentree-scolaire",
+    "premiere-rentree-maternelle-transition",
+    "questions-avant-inscrire-ecole-privee",
+  ],
+  pillar: "/inscriptions",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-cour-evenements.webp",
+  body: [
+    p("Le calendrier scolaire national donne un rythme commun : rentrée, vacances intercalaires, fêtes. Il ne dit pas l'heure à laquelle votre enfant de maternelle commencera un mercredi à Mohammedia. Il permet néanmoins aux familles d'anticiper les bagages, les grands-parents, et les semaines où tout le monde est fatigué."),
+    p("Les dates ci-dessous reprennent l'organisation de l'année 2026-2027 telle que décrite à partir de l'arrêté ministériel n°047.26 du 3 juillet 2026, relayé par le ministère de l'Éducation nationale, du Préscolaire et des Sports. Une école privée peut coller à ce cadre ou publier le sien. [DONNÉE ÉCOLE À CONFIRMER : calendrier interne de Mot de Passe Junior]. En cas d'écart, le document remis par l'école prime pour votre enfant."),
+    h2("La rentrée 2026, en plusieurs temps"),
+    p("Selon le calendrier national, les personnels administratifs reprennent le 1er septembre 2026. Les enseignants rejoignent les établissements le 2 septembre. L'accueil des élèves est progressif : le 3 septembre concerne notamment le préscolaire et les plus jeunes du primaire ; le 4 et le 5 septembre suivent d'autres niveaux. Le démarrage effectif et obligatoire des cours, pour l'ensemble des cycles, est fixé au 7 septembre 2026."),
+    p("Pour une famille de maternelle à Mohammedia, retenez surtout ceci : la première semaine de septembre n'est pas toujours une semaine « comme en octobre ». Il peut y avoir un accueil échelonné, des horaires plus souples, des visages encore inconnus. Préparez l'enfant à une entrée, pas à une performance. Voir [préparer la première rentrée](/blog/preparer-enfant-premiere-rentree-scolaire)."),
+    h3("Ce que cela change concrètement"),
+    p("Gardez de la souplesse les 3, 4 et 5 septembre si votre école suit le calendrier national. Ne posez pas un voyage le 7 au matin. Vérifiez auprès de l'établissement le jour exact où votre niveau est attendu. [DONNÉE ÉCOLE À CONFIRMER : jour d'accueil du préscolaire, de la maternelle et du primaire à Mot de Passe Junior]."),
+    h2("Les vacances intercalaires et la mi-année"),
+    p("L'année nationale prévoit quatre vacances intercalaires d'une semaine, plus les vacances de mi-année :"),
+    ul(
+      "Première vacance intercalaire : 18 – 25 octobre 2026.",
+      "Deuxième vacance intercalaire : 6 – 13 décembre 2026.",
+      "Vacances de mi-année : 24 – 31 janvier 2027.",
+      "Troisième vacance intercalaire : 21 – 28 mars 2027.",
+      "Quatrième vacance intercalaire : 9 – 16 mai 2027.",
+    ),
+    p("Ces périodes aident à souffler. Elles fatiguent aussi si l'on enchaîne trop d'activités « pour rentabiliser ». Un enfant de maternelle a souvent plus besoin de jeu libre que d'un planning de stages. Le [jeu](/blog/role-du-jeu-apprentissages-maternelle) reste le meilleur programme de vacances à trois ans."),
+    h3("Fêtes nationales à dates fixes"),
+    p("S'ajoutent notamment : Fête de l'Unité (31 octobre 2026), Marche Verte (6 novembre 2026), Fête de l'Indépendance (18 novembre 2026), Nouvel An grégorien (1er janvier 2027), Manifeste de l'Indépendance (11 janvier 2027), Nouvel An amazigh (14 janvier 2027), Fête du Travail (1er mai 2027). Une école peut rester ouverte ou fermée selon son statut et son règlement. Demandez le calendrier remis aux familles."),
+    h2("Les fêtes religieuses : à confirmer selon la lune"),
+    p("L'Aïd al-Fitr, l'Aïd al-Adha et le Nouvel An hégirien sont indiqués dans le texte ministériel selon le calendrier lunaire, pas avec une date grégorienne définitive au moment de l'arrêté. Ne réservez pas un voyage sur une date « trouvée sur un forum ». Attendez la confirmation officielle de l'année, puis celle de l'école."),
+    h2("Ce que le calendrier ne dit pas"),
+    p("Il ne dit pas les horaires quotidiens, les mercredis, la cantine, ni les kermesses. [DONNÉE ÉCOLE À CONFIRMER : horaires exacts, mercredi, restauration]. Il ne dit pas non plus à quel âge votre enfant est prêt : cela reste un sujet pédagogique, traité dans [À quel âge commencer la maternelle ?](/blog/a-quel-age-commencer-maternelle) et [préscolaire ou maternelle](/blog/prescolaire-ou-maternelle-maroc)."),
+    p("Pour les familles de La Coline et du reste de Mohammedia, le plus simple est de croiser ce calendrier national avec la page [inscriptions](/inscriptions) et un message à l'école. Les [premiers jours](/blog/premiere-rentree-maternelle-transition) se préparent ensuite, date par date, enfant par enfant — pas uniquement arrêté par arrêté."),
+    h2("Comment s'en servir en famille, sans tout planifier"),
+    p("Cochez d'abord les semaines de vacances intercalaires sur un calendrier mural. Puis seulement, si vous voyagez, regardez les fêtes nationales. Laissez les fêtes religieuses en pointillés jusqu'à confirmation. Un enfant de maternelle n'a pas besoin d'un planning coloré : il a besoin que vous soyez un peu plus disponibles les soirs de rentrée et les lendemains de vacances, quand le rythme reprend."),
+    p("Si vous comparez plusieurs écoles privées, demandez leur calendrier écrit. Certaines ferment plus tôt en juin, d'autres ouvrent des activités pendant une semaine intercalaire. Ni l'un ni l'autre n'est « mieux ». C'est un critère, comme le trajet ou les langues. L'article [5 questions avant d'inscrire](/blog/questions-avant-inscrire-ecole-privee) complète ce point côté établissement."),
+    p("Enfin, rappelez-vous qu'un calendrier officiel décrit le public et le cadre national. Mot de Passe Junior, à La Coline, s'adresse à des enfants de [préscolaire](/prescolaire), [maternelle](/maternelle) et [primaire](/primaire). Le rythme d'un petit n'est pas celui d'un lycéen. Servez-vous des dates pour anticiper, pas pour juger une école à sa capacité à « coller au ministère »."),
+  ],
+};

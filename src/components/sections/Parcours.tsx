@@ -146,7 +146,7 @@ export function Parcours() {
 
           <DecoSide src="/media/images/parcours-deco-right.png" delay={0.2} />
 
-          <CartoonSide src="/media/icons/cartoon-pink.png" delay={0.25} />
+          <CartoonSide src="/media/icons/cartoon-green.png" delay={0.25} />
         </div>
       </div>
     </section>

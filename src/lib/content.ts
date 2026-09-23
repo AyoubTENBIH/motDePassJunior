@@ -15,16 +15,11 @@ export const contact = {
   addressLocality: "Mohammedia",
   postalCode: "28000",
   neighborhood: "La Coline",
-  plusCode: "MJXH+7P2",
   address: "Boulevard de la Résistance, Mohammedia 28000",
-  hours: "Lun–Ven, 8h – 17h",
-  mapsUrl: "https://maps.app.goo.gl/BNKsY1YH5EHC3xZA9",
-  mapsEmbed:
-    "https://maps.google.com/maps?q=33.698126,-7.370735&z=16&output=embed",
-  geo: {
-    latitude: 33.698126,
-    longitude: -7.370735,
-  },
+  /** Horaires quotidiens : non confirmés par l'école. */
+  hours: null,
+  /** Lien Maps générique (recherche d'adresse). Pas de pin GPS confirmé. */
+  mapsUrl: null,
   whatsapp:
     "https://wa.me/212664617070?text=" +
     encodeURIComponent(
@@ -34,6 +29,13 @@ export const contact = {
 
 export function whatsappUrl(text: string) {
   return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
+
+export function mapsSearchUrl() {
+  if (contact.mapsUrl) return contact.mapsUrl;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${contact.streetAddress}, ${contact.addressLocality} ${contact.postalCode}`,
+  )}`;
 }
 
 export const valeurs = [
@@ -99,19 +101,49 @@ export const parcours = [
 ] as const;
 
 export const espacesRow1 = [
-  { image: "/media/images/img-06.png", alt: "Façade de l'école" },
-  { image: "/media/images/img-11.png", alt: "Classe préscolaire" },
-  { image: "/media/images/img-01.png", alt: "Cour et événements" },
-  { image: "/media/images/img-14.png", alt: "Salle de classe" },
-  { image: "/media/images/parcours-prescolaire.png", alt: "Vie préscolaire" },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-facade.webp",
+    alt: "Façade de l'école Mot de Passe Junior à Mohammedia",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-classe-prescolaire.webp",
+    alt: "Classe préscolaire à Mot de Passe Junior, Mohammedia",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-cour-evenements.webp",
+    alt: "Cour et moment collectif à Mot de Passe Junior",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-salle-de-classe.webp",
+    alt: "Salle de classe à Mot de Passe Junior, Mohammedia",
+  },
+  {
+    image: "/media/images/parcours-prescolaire.png",
+    alt: "Enfants en préscolaire à Mot de Passe Junior",
+  },
 ] as const;
 
 export const espacesRow2 = [
-  { image: "/media/images/img-13.png", alt: "Espaces communs" },
-  { image: "/media/images/img-10.png", alt: "Espace de jeux" },
-  { image: "/media/images/img-17.png", alt: "Salle multimédia" },
-  { image: "/media/images/img-15.png", alt: "Classe primaire" },
-  { image: "/media/images/parcours-primaire.png", alt: "Vie primaire" },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-espaces-communs.webp",
+    alt: "Espaces communs de l'école à Mohammedia",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-espace-jeux.webp",
+    alt: "Espace de jeux à Mot de Passe Junior",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-salle-multimedia.webp",
+    alt: "Salle multimédia de l'école à Mohammedia",
+  },
+  {
+    image: "/media/images/ecole-maternelle-mohammedia-classe-primaire.webp",
+    alt: "Classe primaire à Mot de Passe Junior, Mohammedia",
+  },
+  {
+    image: "/media/images/parcours-primaire.png",
+    alt: "Élèves de primaire à Mot de Passe Junior",
+  },
 ] as const;
 
 /** @deprecated use espacesRow1 / espacesRow2 */
@@ -149,25 +181,25 @@ export const trilangues = {
 
 export const vieEcoleColumns = [
   [
-    "/media/images/img-02.png",
-    "/media/images/img-12.png",
-    "/media/images/img-09.png",
-    "/media/images/img-11.png",
-    "/media/images/img-07.png",
+    "/media/images/ecole-maternelle-mohammedia-kermesse.webp",
+    "/media/images/ecole-maternelle-mohammedia-vie-quotidienne.webp",
+    "/media/images/ecole-maternelle-mohammedia-ateliers-creatifs.webp",
+    "/media/images/ecole-maternelle-mohammedia-classe-prescolaire.webp",
+    "/media/images/ecole-maternelle-mohammedia-bricolage.webp",
   ],
   [
-    "/media/images/img-08.png",
-    "/media/images/img-16.png",
-    "/media/images/img-14.png",
-    "/media/images/img-01.png",
-    "/media/images/img-10.png",
+    "/media/images/ecole-maternelle-mohammedia-accueil.webp",
+    "/media/images/ecole-maternelle-mohammedia-activites.webp",
+    "/media/images/ecole-maternelle-mohammedia-salle-de-classe.webp",
+    "/media/images/ecole-maternelle-mohammedia-cour-evenements.webp",
+    "/media/images/ecole-maternelle-mohammedia-espace-jeux.webp",
   ],
   [
-    "/media/images/img-13.png",
-    "/media/images/img-17.png",
-    "/media/images/img-18.png",
-    "/media/images/img-15.png",
-    "/media/images/img-19.png",
+    "/media/images/ecole-maternelle-mohammedia-espaces-communs.webp",
+    "/media/images/ecole-maternelle-mohammedia-salle-multimedia.webp",
+    "/media/images/ecole-maternelle-mohammedia-apprentissage.webp",
+    "/media/images/ecole-maternelle-mohammedia-classe-primaire.webp",
+    "/media/images/ecole-maternelle-mohammedia-enfants.webp",
   ],
 ] as const;
 
@@ -175,32 +207,32 @@ export const vieEcoleMedia = [
   {
     label: "Mascotte & kermesse",
     tone: "orange" as const,
-    image: "/media/images/img-02.png",
+    image: "/media/images/ecole-maternelle-mohammedia-kermesse.webp",
   },
   {
     label: "Accueil & bienvenue",
     tone: "coral" as const,
-    image: "/media/images/img-08.png",
+    image: "/media/images/ecole-maternelle-mohammedia-accueil.webp",
   },
   {
     label: "Ateliers créatifs",
     tone: "green" as const,
-    image: "/media/images/img-09.png",
+    image: "/media/images/ecole-maternelle-mohammedia-ateliers-creatifs.webp",
   },
   {
     label: "Salles de classe",
     tone: "navy" as const,
-    image: "/media/images/img-14.png",
+    image: "/media/images/ecole-maternelle-mohammedia-salle-de-classe.webp",
   },
   {
     label: "Bricolage & mobiles",
     tone: "orange" as const,
-    image: "/media/images/img-07.png",
+    image: "/media/images/ecole-maternelle-mohammedia-bricolage.webp",
   },
   {
     label: "Salle multimédia",
     tone: "coral" as const,
-    image: "/media/images/img-17.png",
+    image: "/media/images/ecole-maternelle-mohammedia-salle-multimedia.webp",
   },
 ] as const;
 
@@ -219,6 +251,9 @@ export const videos = {
     {
       src: "/media/videos/video4.mp4",
       poster: "/media/videos/video4.jpg",
+    },
+    {
+      src: "/media/videos/vid3.mp4",
     },
   ],
 } as const;

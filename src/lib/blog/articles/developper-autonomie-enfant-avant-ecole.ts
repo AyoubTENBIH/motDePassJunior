@@ -1,0 +1,48 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "developper-autonomie-enfant-avant-ecole",
+  title: "Comment développer l'autonomie d'un enfant avant l'école",
+  description:
+    "Gestes concrets pour développer l'autonomie avant l'école : habillage, repas, doudou, petites responsabilités, sans en faire un programme.",
+  category: "Petite enfance & développement",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "preparer-enfant-premiere-rentree-scolaire",
+    "role-du-jeu-apprentissages-maternelle",
+    "premiere-rentree-maternelle-transition",
+  ],
+  pillar: "/prescolaire",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-espace-jeux.webp",
+  body: [
+    p("L'autonomie avant l'école n'est pas un enfant qui « se débrouille tout seul ». C'est un enfant qui a déjà goûté à quelques gestes : enfiler un gilet, porter son gobelet, dire qu'il a besoin d'aide. Ces gestes ne font pas de lui un élève modèle. Ils lui évitent d'arriver dans un collectif où tout, absolument tout, dépend encore d'un adulte collé à lui."),
+    p("À Mohammedia, que vous visiez le [préscolaire](/prescolaire) ou la [maternelle](/maternelle), ces habitudes se construisent à la maison, sans cahier. Mot de Passe Junior accueille des enfants à des stades très différents. [DONNÉE ÉCOLE À CONFIRMER : attendus précis à l'entrée]. En attendant, voici ce qui aide vraiment, et ce qui n'aide pas."),
+    h2("L'autonomie, ce n'est pas l'indépendance"),
+    p("Un enfant de trois ans a le droit d'avoir besoin. L'autonomie, c'est pouvoir faire une partie du chemin, puis appeler. L'indépendance forcée (« tu es grand maintenant ») crée souvent plus d'angoisse que de compétence. On avance par petites victoires, répétées, dans le calme — rarement le matin où l'on est déjà en retard."),
+    h3("Choisir deux gestes, pas quinze"),
+    ul(
+      "L'habillage : commencer par enlever, plus facile que mettre. Puis les chaussures à scratch.",
+      "La table : porter une serviette, essayer la cuillère, vider un petit gobelet.",
+      "Les toilettes : prévenir, s'asseoir, se laver les mains — même imparfaitement.",
+      "Les affaires : accrocher un sac à un crochet à sa hauteur, à la maison d'abord.",
+    ),
+    p("Deux de ces gestes, pratiqués souvent, valent mieux qu'une liste affichée sur le frigo. Le soir, on a plus de temps que le matin. C'est le bon créneau. Voir aussi [préparer la première rentrée](/blog/preparer-enfant-premiere-rentree-scolaire)."),
+    h2("Le jeu, encore une fois"),
+    p("Un enfant qui a l'habitude de jouer sans qu'on anime chaque minute développe une autonomie intérieure : il sait s'occuper. C'est précieux en classe, quand l'adulte n'est pas uniquement pour lui. L'article [Le rôle du jeu en maternelle](/blog/role-du-jeu-apprentissages-maternelle) le montre côté école. Côté maison, laissez des temps où vous êtes présent sans être animateur : vous pliez du linge, il construit."),
+    p("Attention aux jouets qui font tout. Ils occupent. Ils n'apprennent pas à inventer. Un peu suffit. Beaucoup envahissent l'attention."),
+    h3("Parler, choisir, attendre"),
+    p("Proposez des choix fermés : « le t-shirt bleu ou le rouge ? » Pas « tu mets quoi ? » qui déborde. Apprenez l'attente courte : « je finis cette phrase, puis je t'aide ». C'est déjà la vie d'un groupe. Nommez les émotions sans les juger : « tu es en colère, le zip ne passe pas ». Puis aidez un peu, pas tout."),
+    h2("Ce qu'il ne faut pas forcer"),
+    p("La propreté complète, la nuit, le langage parfait, le « je me sépare sans larme » : ce ne sont pas des prérequis moraux. Certaines écoles demandent d'être propre le jour. Demandez la règle. [DONNÉE ÉCOLE À CONFIRMER : propreté exigée]. Un enfant qui n'est pas prêt sur ce point n'est pas un enfant « pas autonome ». Il a un rythme corporel."),
+    p("Évitez aussi les comparaisons. Le cousin qui boutonne tout seul n'est pas un modèle pédagogique. Il est un autre enfant. La [première rentrée](/blog/premiere-rentree-maternelle-transition) se passera mieux si votre enfant se sent capable, pas évalué."),
+    h2("Lier la maison et l'école"),
+    p("Dites à l'équipe ce que votre enfant sait déjà faire, et ce qui le met encore en échec. Une bonne école s'appuie là-dessus. Elle ne ridiculise pas un enfant qui a encore besoin d'aide pour le manteau. Si l'on vous répond « ici, ils doivent tous savoir », posez-vous la question du rythme — surtout en [préscolaire](/prescolaire)."),
+    p("L'autonomie se continue à l'école, elle ne s'y achève pas. Pour l'âge d'entrée, lisez [À quel âge commencer la maternelle ?](/blog/a-quel-age-commencer-maternelle). Pour le choix d'établissement, [choisir une maternelle à Mohammedia](/blog/choisir-ecole-maternelle-mohammedia). Les [inscriptions](/inscriptions) viennent ensuite, quand le quotidien de l'enfant, pas seulement le dossier, vous semble prêt."),
+    h2("Un exemple de semaine, sans programme"),
+    p("Lundi : l'enfant pose son manteau. Mardi : il ouvre sa gourde. Mercredi : il choisit entre deux t-shirts. Jeudi : il essuie une goutte d'eau sans drame. Vendredi : vous partez cinq minutes dans une autre pièce pendant qu'il joue. Ce n'est pas un protocole. C'est une façon de ne rien forcer tout en avançant. Si un jour ne va pas, on recommence le lendemain. L'autonomie déteste la honte."),
+    p("Les weekends, gardez du [jeu](/blog/role-du-jeu-apprentissages-maternelle) sans but. C'est là que l'enfant s'exerce à décider : quelle tour, quel rôle, quelle règle inventée. Ces décisions minuscules préparent la cour de [maternelle](/maternelle) mieux qu'un discours sur « il faut être grand ». Et si la rentrée approche, reliez ces gestes à [la préparation concrète](/blog/preparer-enfant-premiere-rentree-scolaire) plutôt qu'à une angoisse de performance."),
+    p("Si un geste bloque longtemps, changez de terrain plutôt que d'insister. Un enfant qui refuse le manteau acceptera parfois de porter le sac. L'objectif n'est pas de gagner. C'est qu'il sente : « je peux faire une partie ». C'est déjà beaucoup, avant Mohammedia et avant n'importe quelle école."),
+  ],
+};

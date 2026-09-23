@@ -1,0 +1,48 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "preparer-enfant-premiere-rentree-scolaire",
+  title: "Comment préparer son enfant à sa première rentrée scolaire",
+  description:
+    "Préparer la première rentrée : routines, doudou, langage, visite de l'école et ce que les parents peuvent faire sans mettre la pression.",
+  category: "Rentrée & vie quotidienne",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "premiere-rentree-maternelle-transition",
+    "developper-autonomie-enfant-avant-ecole",
+    "a-quel-age-commencer-maternelle",
+  ],
+  pillar: "/inscriptions",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-accueil.webp",
+  body: [
+    p("La première rentrée ne se joue pas le matin de septembre. Elle se prépare, doucement, dans les semaines d'avant : le sommeil, les phrases que l'on emploie, le droit d'avoir un doudou, le droit de ne pas être « courageux » à tout prix. Un enfant bien préparé n'est pas un enfant qui ne pleure pas. C'est un enfant qui sait un peu à quoi s'attendre."),
+    p("À Mohammedia, la rentrée 2026-2027 du calendrier national prévoit un accueil progressif des élèves début septembre, puis un démarrage effectif des cours. Une école privée peut caler son propre rythme. [DONNÉE ÉCOLE À CONFIRMER : date exacte de rentrée et modalités d'accueil à Mot de Passe Junior]. Les dates officielles sont rappelées dans [le calendrier scolaire 2026-2027](/blog/calendrier-scolaire-2026-2027-maroc-mohammedia)."),
+    h2("Parler vrai, sans tout raconter"),
+    p("Évitez les deux extrêmes. « Tu vas adorer, c'est trop bien » met une pression : s'il n'adore pas, il se sentira en faute. « Tu vas voir, il faudra travailler » transforme l'école en menace. Une phrase simple suffit : « Tu iras dans une école. Il y aura des enfants, des jeux, une maîtresse ou un maître. Je viendrai te chercher. »"),
+    p("Si vous-même avez le ventre noué, ne le niez pas tout à fait, mais ne le versez pas sur lui. Les enfants lisent les épaules. Un parent qui dit « on va y arriver » tout en respirant aide plus qu'un parent qui surjoue l'enthousiasme."),
+    h3("Nommer les lieux et les personnes"),
+    p("Visitez si l'école le permet. Montrez la porte, la cour, les toilettes. Donnez le prénom de la personne qui accueillera, si vous le connaissez. Un lieu nommé fait moins peur qu'un lieu abstrait. Mot de Passe Junior se visite sur rendez-vous, à La Coline. La page [inscriptions](/inscriptions) et la page [contact](/contact) servent précisément à cela."),
+    h2("Les routines, plus utiles que les cahiers d'été"),
+    p("Inutile de « faire l'école à la maison » en août. Utile, en revanche, de rapprocher un peu le rythme : coucher un peu plus régulier, petit-déjeuner sans écran, habillage commencé par l'enfant. L'article [Comment développer l'autonomie avant l'école](/blog/developper-autonomie-enfant-avant-ecole) détaille ces gestes."),
+    ul(
+      "Choisir ensemble le cartable ou le sac, même simple.",
+      "Repérer un doudou ou un objet autorisé, et vérifier la règle de l'école.",
+      "S'entraîner à enlever un manteau, ouvrir une gourde, dire « pipi » à un adulte.",
+      "Lire des albums où un enfant va à l'école — sans en faire une leçon.",
+    ),
+    p("[DONNÉE ÉCOLE À CONFIRMER : objets autorisés en classe, goûter, tenue]. Tant que la liste n'est pas confirmée, préparez le minimum et demandez le reste à l'équipe. Éviter d'acheter vingt fournitures « au cas où »."),
+    h3("Le corps avant la performance"),
+    p("Les jours qui précèdent, gardez des temps de jeu libre. Un enfant trop stimulé, trop photographié, trop « prêt » arrive vidé. Le [jeu](/blog/role-du-jeu-apprentissages-maternelle) n'est pas l'ennemi de la rentrée. C'est son carburant. Coupez un peu les écrans le soir. Ce n'est pas une morale : c'est du sommeil."),
+    h2("Anticiper la séparation, pas la nier"),
+    p("Dites-lui qui le déposera, qui le récupérera, et à quel moment de la journée — « après la sieste », « après le goûter » — plutôt qu'une heure qu'il ne lit pas. Inventez un rituel court : un câlin, une phrase, un geste à la vitre. Puis partez. Rester « encore une minute » dix fois de suite prolonge l'incertitude."),
+    p("S'il pleure, ce n'est pas un échec de votre préparation. C'est une information : le lien est vivant. L'article [Première rentrée en maternelle : une transition en douceur](/blog/premiere-rentree-maternelle-transition) reprend les jours qui suivent. Beaucoup d'enfants pleurent une semaine et jouent la suivante. D'autres ont besoin de plus. Ni l'un ni l'autre n'est « trop sensible » au sens d'un défaut."),
+    h2("Ce que vous pouvez demander à l'école"),
+    p("Demandez comment se passent les premiers jours : présence d'un parent, horaires aménagés, personne référente. [DONNÉE ÉCOLE À CONFIRMER : protocole d'adaptation]. Une [maternelle](/maternelle) ou un [préscolaire](/prescolaire) qui répond précisément sur ce point mérite souvent plus de confiance qu'une école qui dit « ils s'habituent tous »."),
+    p("Préparer une rentrée, c'est aussi préparer les adultes. Notez les numéros, le chemin, le prénom de l'enseignante. Réduisez vos propres imprévus ce jour-là. Un parent posé aide un enfant à se poser. Ensuite seulement viennent les [inscriptions](/inscriptions) administratives — qui, elles, se règlent avant, pour ne pas ajouter une paperasse au chagrin du matin."),
+    h2("La veille et le jour J"),
+    p("La veille : sac prêt tôt, doudou nommé, vêtements simples, coucher calme. Évitez une fête trop tardive. Le matin : le même petit-déjeuner que d'habitude, pas un menu « spécial rentrée » qui ajoute de l'inconnu. Partez avec une marge. Un enfant qui court vers la porte arrive déjà en dette."),
+    p("Si vous habitez La Coline, chronométrez malgré tout : le boulevard change selon l'heure. Si vous venez d'ailleurs à Mohammedia, prévoyez plus que Google Maps. Puis faites le rituel, et allez-vous-en. La suite se lit dans [Première rentrée en maternelle](/blog/premiere-rentree-maternelle-transition). L'école, elle, se visite encore via [contact](/contact) si vous voulez revoir les lieux avant septembre."),
+  ],
+};

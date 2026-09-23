@@ -6,9 +6,9 @@ import { getPublishedArticles } from "@/lib/blog";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Guide des parents",
+  title: "Guide des parents : maternelle à Mohammedia",
   description:
-    "Guide des parents de Mot de Passe Junior : choisir une école maternelle à Mohammedia, langues, rentrée et vie à l'école.",
+    "Articles pour les familles de Mohammedia : choisir une école maternelle, comprendre le préscolaire, préparer la rentrée 2026-2027.",
   path: "/blog",
 });
 
@@ -20,7 +20,7 @@ export default function BlogPage() {
       <PageIntro
         eyebrow="Guide des parents"
         title="Des repères utiles, sans remplissage"
-        lead="Des articles factuels pour les familles de Mohammedia : choisir une école, comprendre le préscolaire, et préparer la rentrée."
+        lead="Des articles factuels pour les familles de Mohammedia : choisir une école maternelle, comprendre le préscolaire, les langues et préparer la rentrée 2026-2027."
         crumbs={[
           { name: "Accueil", path: "/" },
           { name: "Guide des parents", path: "/blog" },

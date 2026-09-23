@@ -5,16 +5,15 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ImageTrail } from "@/components/effects/ImageTrail";
 import { LazyVideo } from "@/components/media/LazyVideo";
 import { Reveal } from "@/components/ui/Reveal";
 import { vieEcoleColumns, videos } from "@/lib/content";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-/**
- * Animation basée sur Codrops Demo 1 — On-Scroll Columns
- * https://github.com/codrops/OnScrollColumnsRows
- */
+const trailImages = [...new Set(vieEcoleColumns.flat())];
+
 export function VieEcole() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -97,8 +96,7 @@ export function VieEcole() {
           </p>
         </Reveal>
 
-        {/* Vidéos événements — portrait, autoplay, sans contrôles */}
-        <div className="mx-auto mt-8 grid max-w-[720px] grid-cols-3 gap-[2vw] md:mt-10">
+        <div className="mx-auto mt-8 grid max-w-[920px] grid-cols-2 gap-[2vw] sm:grid-cols-4 md:mt-10">
           {videos.vie.map((item) => (
             <div
               key={item.src}
@@ -115,31 +113,36 @@ export function VieEcole() {
         </div>
       </div>
 
-      {/* Colonnes Codrops Demo 1 */}
-      <div
-        ref={gridRef}
-        className="vie-columns mx-auto mt-12 w-full max-w-[1100px] px-4 md:mt-16 md:px-6"
-      >
-        {vieEcoleColumns.map((column, colIndex) => (
-          <div key={colIndex} className="vie-column">
-            {column.map((src) => (
-              <figure key={`${colIndex}-${src}`} className="vie-column__item">
-                <div className="vie-column__imgwrap">
-                  <div className="vie-column__img">
-                    <Image
-                      src={src}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 360px"
-                      quality={70}
-                    />
+      <div className="relative">
+        <div
+          ref={gridRef}
+          className="vie-columns mx-auto mt-12 w-full max-w-[1100px] px-4 md:mt-16 md:px-6"
+        >
+          {vieEcoleColumns.map((column, colIndex) => (
+            <div key={colIndex} className="vie-column">
+              {column.map((src) => (
+                <figure key={`${colIndex}-${src}`} className="vie-column__item">
+                  <div className="vie-column__imgwrap">
+                    <div className="vie-column__img">
+                      <Image
+                        src={src}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 360px"
+                        quality={70}
+                      />
+                    </div>
                   </div>
-                </div>
-              </figure>
-            ))}
-          </div>
-        ))}
+                </figure>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="pointer-events-none absolute inset-0 z-10 hidden md:block md:pointer-events-auto">
+          <ImageTrail items={trailImages} variant={1} />
+        </div>
       </div>
     </section>
   );

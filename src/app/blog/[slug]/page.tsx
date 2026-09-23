@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteChrome } from "@/components/layout/SiteChrome";
 import { PageCta } from "@/components/layout/PageCta";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { RichText } from "@/lib/blog/RichText";
 import {
   getArticle,
   getPublishedArticles,
   getRelatedArticles,
 } from "@/lib/blog";
-import { absoluteUrl, breadcrumbJsonLd, pageMetadata, siteName } from "@/lib/seo";
+import { blogPostingJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,11 +22,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article) return {};
+  if (!article) return { robots: { index: false, follow: false } };
   return pageMetadata({
     title: article.title,
     description: article.description,
     path: `/blog/${article.slug}`,
+    image: article.image,
   });
 }
 
@@ -43,19 +46,7 @@ export default async function BlogArticlePage({ params }: Props) {
   return (
     <SiteChrome>
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: article.title,
-          description: article.description,
-          datePublished: article.datePublished,
-          dateModified: article.dateModified,
-          author: { "@type": "Organization", name: siteName },
-          publisher: { "@type": "Organization", name: siteName },
-          mainEntityOfPage: absoluteUrl(`/blog/${article.slug}`),
-        }}
-      />
+      <JsonLd data={blogPostingJsonLd(article)} />
       <article className="bg-cream px-5 pb-20 pt-28 md:px-8 md:pt-32">
         <div className="mx-auto max-w-3xl">
           <nav aria-label="Fil d'Ariane" className="mb-5 text-xs text-ink/45">
@@ -80,21 +71,58 @@ export default async function BlogArticlePage({ params }: Props) {
             {article.description}
           </p>
 
+          {article.image ? (
+            <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[24px] bg-[#F4F1EA]">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+          ) : null}
+
           <div className="mt-10 space-y-8 text-base leading-relaxed text-ink/75">
-            {article.body.map((block, index) => (
-              <section key={block.heading ?? index}>
-                {block.heading ? (
-                  <h2 className="font-display text-2xl font-bold text-navy">
-                    {block.heading}
+            {article.body.map((block, index) => {
+              if (block.type === "h2") {
+                return (
+                  <h2
+                    key={`h2-${index}`}
+                    className="font-display text-2xl font-bold text-navy"
+                  >
+                    {block.text}
                   </h2>
-                ) : null}
-                {block.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 24)} className="mt-3">
-                    {paragraph}
-                  </p>
-                ))}
-              </section>
-            ))}
+                );
+              }
+              if (block.type === "h3") {
+                return (
+                  <h3
+                    key={`h3-${index}`}
+                    className="font-display text-xl font-semibold text-navy"
+                  >
+                    {block.text}
+                  </h3>
+                );
+              }
+              if (block.type === "ul") {
+                return (
+                  <ul key={`ul-${index}`} className="list-disc space-y-2 pl-5">
+                    {block.items.map((item) => (
+                      <li key={item.slice(0, 40)}>
+                        <RichText text={item} />
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              return (
+                <p key={`p-${index}`}>
+                  <RichText text={block.text} />
+                </p>
+              );
+            })}
           </div>
 
           <p className="mt-10">
@@ -126,7 +154,10 @@ export default async function BlogArticlePage({ params }: Props) {
             </aside>
           ) : null}
 
-          <PageCta />
+          <PageCta
+            title="Une question sur l'école ?"
+            text="Les inscriptions 2026-2027 se préparent avec l'équipe. Écrivez-nous sur WhatsApp ou demandez une visite à Mohammedia."
+          />
         </div>
       </article>
     </SiteChrome>

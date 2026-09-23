@@ -1,0 +1,51 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "role-du-jeu-apprentissages-maternelle",
+  title: "Le rôle du jeu dans les apprentissages en maternelle",
+  description:
+    "Pourquoi le jeu n'est pas l'opposé du travail en maternelle : langage, mathématiques émergentes, langues et ce que les parents peuvent observer.",
+  category: "Langues & pédagogie",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "developper-autonomie-enfant-avant-ecole",
+    "education-trilingue-jeune-age",
+    "prescolaire-ou-maternelle-maroc",
+  ],
+  pillar: "/maternelle",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-ateliers-creatifs.webp",
+  body: [
+    p("« Ils ne font que jouer. » Cette phrase, entendue à la sortie d'une maternelle, mélange deux malentendus. Le premier : le jeu serait du vide. Le second : l'apprentissage ne commencerait que lorsqu'un enfant est assis, silencieux, face à une fiche. Or c'est souvent l'inverse. C'est dans le jeu qu'un jeune enfant répète, ose, se trompe, recommence — exactement ce dont les apprentissages ont besoin."),
+    p("À Mot de Passe Junior, à Mohammedia, le [préscolaire](/prescolaire) et la [maternelle](/maternelle) se présentent comme des espaces pour apprendre, créer et s'amuser. Ce n'est pas une formule décorative. C'est une orientation. Cet article explique pourquoi, sans jargon, et quoi regarder lors d'une visite."),
+    h2("Ce que le jeu fait au cerveau — version sobre"),
+    p("Le jeu n'est pas une récompense après le « vrai travail ». Pour un enfant de trois, quatre ou cinq ans, il est le vrai travail. En manipulant, en courant, en construisant, en jouant à « on dirait que », l'enfant exerce l'attention, la mémoire de ce qui vient de se passer, le contrôle d'un élan (« j'attends mon tour »), le langage pour négocier."),
+    p("Les neurosciences de l'éducation, lorsqu'elles sont lues sans marketing, disent surtout ceci : un cerveau jeune apprend mieux dans un contexte émotionnellement sûr, répété, incarné. Le jeu fournit ce contexte. Une fiche trop tôt fournit souvent de l'obéissance, pas de la compréhension."),
+    h3("Plusieurs jeux, plusieurs apprentissages"),
+    ul(
+      "Le jeu symbolique (dinette, docteur, école) travaille le langage, les rôles, l'empathie.",
+      "Le jeu de construction travaille l'espace, l'équilibre, un début de raisonnements (« si je mets trop haut, ça tombe »).",
+      "Le jeu moteur travaille le corps, indispensable à l'attention plus tard en classe.",
+      "Les jeux de règles simples travaillent l'attente, le « perdu/gagné », la frustration utile.",
+      "Les jeux de sable, d'eau, de pâte travaillent les sens et le calme.",
+    ),
+    p("Une maternelle riche n'aligne pas ces jeux comme des « ateliers de compétences ». Elle les rend disponibles, avec des adultes qui observent et relancent parfois. [DONNÉE ÉCOLE À CONFIRMER : organisation concrète des temps de jeu à Mot de Passe Junior]."),
+    h2("Langage, maths, langues : le jeu n'est pas à côté"),
+    p("Compter les assiettes de la dinette, c'est déjà une mathématique. Raconter ce que le dinosaure a fait, c'est déjà un récit. Chanter « one, two, three » en sautant, c'est déjà de l'anglais utile. Voir [Pourquoi une éducation trilingue dès le plus jeune âge](/blog/education-trilingue-jeune-age) : les langues entrent mieux par le corps que par le tableau."),
+    p("Le graphisme aussi naît souvent du jeu : tracer dans le sable, suivre une route de voitures, découper pour un décor. Forcer trop tôt un « bel écriture » fatigue la main et le désir. Une [maternelle](/maternelle) qui montre des cahiers dès la première visite n'est pas automatiquement meilleure. Elle est simplement plus visible pour l'adulte."),
+    h3("Le rôle de l'adulte"),
+    p("Jouer n'est pas « laisser faire n'importe quoi ». L'adulte prépare l'espace, assure la sécurité, met des mots, propose un rebond, arrête ce qui blesse. Il ne passe pas son temps à corriger. Il n'est pas non plus sur son téléphone dans la cour. Lors d'une visite, regardez où sont les regards."),
+    h2("Ce que les parents peuvent faire à la maison"),
+    p("Offrir du temps sans but affiché. Un carton vaut parfois mieux qu'un jouet qui parle tout seul. Jouer avec l'enfant, oui, mais pas tout diriger. L'autonomie se nourrit de ces plages : voir [développer l'autonomie avant l'école](/blog/developper-autonomie-enfant-avant-ecole). Réduire un peu les écrans n'est pas une punition : c'est rendre du temps au jeu qui fatigue moins le soir."),
+    p("Si votre enfant « ne fait que jouer » après l'école, c'est souvent qu'il continue d'apprendre. La journée de maternelle est dense. Le soir, le jeu libre digère. Inutile d'ajouter une heure de fiche « pour avancer »."),
+    h2("Comment reconnaître une école qui prend le jeu au sérieux"),
+    p("Vous voyez des espaces distincts, pas seulement des tables en U. Vous entendez du bruit de vie, pas un silence de composition. On vous explique une journée avec des temps de cour, d'atelier, d'histoire — pas seulement des matières. La différence [préscolaire / maternelle](/blog/prescolaire-ou-maternelle-maroc) ne devrait pas signifier « on arrête de jouer »."),
+    p("Pour situer ce critère dans un choix d'école à Mohammedia, lisez [Comment choisir une école maternelle](/blog/choisir-ecole-maternelle-mohammedia). Puis visitez. Les [inscriptions](/inscriptions) viendront après, quand vous aurez vu des enfants en train de jouer — vraiment."),
+    h2("Quand le jeu inquiète les parents"),
+    p("Il est légitime de vouloir « des bases ». Lecture, graphisme, chiffres : cela viendra. Ce qui les prépare, à trois ou quatre ans, c'est souvent un jeu répété, nommé, un peu relancé par un adulte. Une école qui n'a que du jeu sans regard n'est pas idéale. Une école qui n'a que des fiches non plus. Cherchez le milieu vivant."),
+    p("Si votre enfant joue « trop » le soir, il récupère. Si trop d'écrans remplacent ce jeu, l'école aura plus de mal à s'appuyer sur son attention. Ce n'est pas une leçon de morale. C'est un levier simple, à la maison, avant même les [inscriptions](/inscriptions) et la rentrée à La Coline."),
+    p("En visite, une dernière question utile : « à quel moment de la journée les enfants jouent-ils vraiment librement ? » Si la réponse est précise — après l'accueil, en cour, en atelier ouvert — le jeu a une place. Si elle reste vague, continuez à chercher, à Mohammedia ou ailleurs."),
+
+  ],
+};

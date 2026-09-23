@@ -1,0 +1,48 @@
+import { h2, h3, p, ul, type BlogArticle } from "@/lib/blog/types";
+
+export const article: BlogArticle = {
+  slug: "premiere-rentree-maternelle-transition",
+  title: "Première rentrée en maternelle : conseils pour une transition en douceur",
+  description:
+    "Les premiers jours de maternelle : larmes, rituels de séparation, fatigue du soir et comment accompagner sans précipiter l'enfant.",
+  category: "Rentrée & vie quotidienne",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  related: [
+    "preparer-enfant-premiere-rentree-scolaire",
+    "developper-autonomie-enfant-avant-ecole",
+    "role-du-jeu-apprentissages-maternelle",
+  ],
+  pillar: "/maternelle",
+  published: true,
+  image: "/media/images/ecole-maternelle-mohammedia-accueil.webp",
+  body: [
+    p("Les premiers jours de maternelle ressemblent rarement à la photo de rentrée. Il y a des larmes, des silences, des enfants qui ne veulent plus enlever leur manteau, des parents qui restent trop longtemps près de la porte. C'est normal. Une transition en douceur n'est pas une transition sans émotion. C'est une transition où l'émotion a une place, et une fin de journée."),
+    p("À Mot de Passe Junior, à Mohammedia, la [maternelle](/maternelle) s'inscrit dans un parcours qui commence parfois par le [préscolaire](/prescolaire). Les pratiques précises des premières semaines seront décrites quand l'école les aura confirmées. [DONNÉE ÉCOLE À CONFIRMER : déroulé des premiers jours et présence des parents]. En attendant, voici ce qui aide la plupart des familles, ici comme ailleurs."),
+    h2("Le matin : un rituel court, toujours le même"),
+    p("L'enfant a besoin de prévisibilité. Même phrase, même geste, même personne si possible. « Je t'embrasse, je m'en vais, je reviens après le goûter. » Puis on part. Ce n'est pas de la dureté. C'est une promesse tenue. Un départ hésitant dit à l'enfant : « peut-être que ce n'est pas sûr »."),
+    p("Si un second parent, une grand-mère ou une nounou dépose l'enfant certains jours, alignez le rituel. Ce n'est pas le même visage, mais ce peut être la même chorégraphie. Évitez les négociations nouvelles chaque matin (« encore cinq minutes », « je reste dans la cour »). Elles épuisent tout le monde et n'apaisent pas vraiment."),
+    h3("Quand les larmes arrivent"),
+    ul(
+      "Accueillez : « tu es triste, je le vois ».",
+      "Rappelez le retour, avec un repère concret.",
+      "Passez la main à l'adulte de l'école, puis sortez.",
+      "Résistez à l'envie de revenir « juste voir » : cela relance souvent le chagrin.",
+    ),
+    p("Demandez ensuite, le soir ou par message, comment la suite s'est passée. Beaucoup d'enfants pleurent trois minutes et jouent la quatrième. Vous avez le droit de savoir. Vous n'avez pas le droit, pour vous rassurer, de transformer l'accueil en scène quotidienne de dix minutes."),
+    h2("Le soir : la fatigue n'est pas un caprice"),
+    p("Les premiers soirs, l'enfant peut être plus collant, plus agressif, plus silencieux. Il a géré du bruit, des consignes, des visages nouveaux. Offrez-lui du jeu libre, pas un interrogatoire. « Qu'est-ce que tu as appris ? » ferme souvent la porte. « J'ai pensé à toi » l'ouvre parfois."),
+    p("Avancez le coucher si besoin. Réduisez les activités extra. La [première préparation](/blog/preparer-enfant-premiere-rentree-scolaire) continue après le jour J : c'est un rythme, pas un événement. L'autonomie du soir (manger, se déshabiller) peut reculer une semaine. Ce n'est pas un échec. C'est une compensation."),
+    h3("Ce qui doit vous alerter — et ce qui peut attendre"),
+    p("Des larmes le matin pendant deux semaines, une fatigue, un retour en arrière sur la propreté : souvent transitoires. Ce qui mérite un échange plus vite : un enfant qui vomit chaque matin, qui se referme complètement, qui n'arrive plus à s'endormir, ou qui dit clairement qu'un adulte ou un enfant lui fait peur. Dans ces cas, contactez l'école sans attendre « que ça passe »."),
+    h2("Travailler avec l'équipe, pas contre elle"),
+    p("Une transition douce est un travail à deux. Dites ce qui rassure votre enfant : une chanson, un mot en darija, un doudou. Demandez ce que l'école autorise. [DONNÉE ÉCOLE À CONFIRMER : objets transitionnels acceptés]. Si quelque chose ne va pas, parlez-en tôt, factuellement, sans accuser. « Depuis jeudi, il ne veut plus entrer » est plus utile que « vous ne vous en occupez pas »."),
+    p("L'école, de son côté, devrait pouvoir vous dire qui est référent. Un enfant de maternelle s'attache à des personnes, pas à un « établissement ». Si vous ne savez pas qui le console, posez la question. C'est légitime."),
+    h2("Le jeu, encore, pendant la transition"),
+    p("À la maison, laissez-le rejouer l'école avec des figurines. C'est ainsi qu'il digère. N'interprétez pas trop. Si la maîtresse « crie » dans le jeu, ce n'est pas forcément une dénonciation : c'est parfois le volume de la cour. Écoutez quand même. Le [jeu](/blog/role-du-jeu-apprentissages-maternelle) reste le langage le plus juste à cet âge."),
+    p("Pour l'âge et le niveau, relisez [À quel âge commencer la maternelle ?](/blog/a-quel-age-commencer-maternelle). Pour les gestes du quotidien, [l'autonomie avant l'école](/blog/developper-autonomie-enfant-avant-ecole). Et si vous préparez encore l'inscription, la page [inscriptions](/inscriptions) et WhatsApp restent le bon premier contact — mieux vaut une question simple qu'une rumination solitaire."),
+    h2("Après deux semaines : faire le point, sans verdict"),
+    p("Vers le quinzième jour, beaucoup de familles savent déjà si la transition avance. Pas « s'il est heureux à 100 % » : s'il retrouve un peu de jeu le soir, s'il nomme un copain, s'il accepte le rituel du matin un peu plus vite. Si rien de tout cela n'apparaît, reprenez contact. Une [maternelle](/maternelle) à Mohammedia qui vous écoute alors vaut plus qu'une école qui vous dit d'attendre décembre."),
+    p("Gardez aussi en tête le calendrier : la première vacance intercalaire d'octobre, rappelée dans [l'article 2026-2027](/blog/calendrier-scolaire-2026-2027-maroc-mohammedia), peut relancer un peu de séparation. Ce n'est pas un retour à zéro. C'est un rappel que la transition a des vagues. On recommence le rituel, plus court encore, et on avance."),
+  ],
+};

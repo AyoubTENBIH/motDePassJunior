@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Contact à Mohammedia",
   description:
-    "Contactez Mot de Passe Junior, boulevard de la Résistance à Mohammedia. WhatsApp, téléphone et carte. Inscriptions 2026-2027.",
+    "Contactez Mot de Passe Junior, boulevard de la Résistance à Mohammedia (La Coline). WhatsApp, téléphone et demande de visite. Inscriptions 2026-2027.",
   path: "/contact",
 });
 
@@ -17,7 +17,7 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="Contact"
         title="Contact à Mohammedia"
-        lead="Mot de Passe Junior se situe boulevard de la Résistance, à Mohammedia (La Coline). WhatsApp, téléphone et carte pour venir nous voir."
+        lead="Mot de Passe Junior se situe boulevard de la Résistance, à Mohammedia (La Coline). WhatsApp, téléphone, et une visite sur rendez-vous."
         crumbs={[
           { name: "Accueil", path: "/" },
           { name: "Contact", path: "/contact" },

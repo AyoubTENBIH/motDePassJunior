@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka, Poppins } from "next/font/google";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { pageMetadata, schoolJsonLd, siteName } from "@/lib/seo";
+import { getSiteUrl, pageMetadata, schoolJsonLd, siteName } from "@/lib/seo";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -20,7 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.motdepassejunior.ma"),
+  metadataBase: new URL(getSiteUrl()),
   ...pageMetadata({
     title: "École maternelle et primaire à Mohammedia | Mot de Passe Junior",
     description:

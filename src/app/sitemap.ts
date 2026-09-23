@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/seo";
 import { getPublishedArticles } from "@/lib/blog";
 
 const staticRoutes = [
@@ -17,6 +17,7 @@ const staticRoutes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const siteUrl = getSiteUrl();
   const pages: MetadataRoute.Sitemap = staticRoutes.map((path) => ({
     url: `${siteUrl}${path === "/" ? "" : path}`,
     lastModified: now,

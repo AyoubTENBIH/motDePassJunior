@@ -1,11 +1,18 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { LocationMap } from "@/components/contact/LocationMap";
 import { contact, whatsappUrl } from "@/lib/content";
 
-const niveaux = ["Préscolaire", "Primaire", "Je ne sais pas encore"] as const;
+const niveaux = [
+  "Préscolaire",
+  "Maternelle",
+  "Primaire",
+  "Je ne sais pas encore",
+] as const;
 
 const fieldClass =
   "h-14 w-full rounded-full border-0 bg-[#F4F1EA] px-6 text-sm text-navy placeholder:text-ink/35 outline-none transition focus:ring-2 focus:ring-orange/45";
@@ -83,33 +90,16 @@ export function Contact({ hideHeading = false }: { hideHeading?: boolean }) {
                   <br />
                   {contact.neighborhood}, {contact.addressLocality}{" "}
                   {contact.postalCode}
-                  <br />
-                  Plus code {contact.plusCode}
                 </dd>
               </div>
               <div>
                 <dt className="font-semibold text-navy">Horaires</dt>
-                <dd className="mt-1 text-ink/65">{contact.hours}</dd>
+                <dd className="mt-1 text-ink/65">
+                  {contact.hours ??
+                    "Horaires à confirmer auprès de l'école — [DONNÉE ÉCOLE À CONFIRMER : horaires exacts]"}
+                </dd>
               </div>
             </dl>
-
-            <div className="mt-10 overflow-hidden rounded-[28px] bg-[#F4F1EA] ring-1 ring-navy/5">
-              <iframe
-                title="Carte — Mot de Passe Junior, Boulevard de la Résistance, Mohammedia"
-                src={contact.mapsEmbed}
-                className="h-64 w-full border-0 md:h-72"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <a
-                href={contact.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-5 py-3 text-sm font-semibold text-navy transition-colors hover:text-orange"
-              >
-                Ouvrir dans Google Maps
-              </a>
-            </div>
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -195,6 +185,21 @@ export function Contact({ hideHeading = false }: { hideHeading?: boolean }) {
             </form>
           </Reveal>
         </div>
+
+        <Reveal className="mt-12">
+          <div className="grid items-stretch gap-5 md:grid-cols-2 lg:gap-8">
+            <LocationMap />
+            <div className="relative min-h-[240px] overflow-hidden rounded-[28px] md:min-h-[320px]">
+              <Image
+                src="/media/images/logo-decor.png"
+                alt="Mot de Passe Junior"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 560px"
+              />
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
