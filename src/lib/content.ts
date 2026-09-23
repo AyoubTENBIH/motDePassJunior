@@ -254,6 +254,7 @@ export const videos = {
     },
     {
       src: "/media/videos/vid3.mp4",
+      poster: undefined,
     },
-  ],
-} as const;
+  ] satisfies { src: string; poster?: string }[],
+};
